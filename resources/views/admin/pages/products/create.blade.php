@@ -68,16 +68,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <!-- <div class="mb-3 row">
-                            <label for="thumbnail" class="col-sm-2 col-form-label">Ảnh đại diện</label>
-                            <div class="col-sm-8">
-                                <input type="file" class="form-control @error('thumbnail') is-invalid @enderror" name="thumbnail">
-                                @error('thumbnail')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div> -->
                         <div class="mb-3 row">
                             <label for="thumbnail" class="col-sm-2 col-form-label">Ảnh đại diện</label>
                             <div class="col-sm-8">
@@ -88,16 +78,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <!-- <div class="mb-3 row">
-                            <label for="galleries" class="col-sm-2 col-form-label">Ảnh bổ sung</label>
-                            <div class="col-sm-8">
-                                <input type="file" class="form-control @error('galleries.*') is-invalid @enderror" name="galleries[]" multiple>
-                                @error('galleries.*')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div> -->
 
                         <div class="mb-3 row">
                             <label for="galleries" class="col-sm-2 col-form-label">Ảnh bổ sung</label>
@@ -139,22 +119,18 @@
                     Danh mục
                 </div>
                 <div class="card-body">
-                    @foreach($categories as $category)
+                    
                         <div class="form-check mt-2">
-                            <input class="form-check-input @error('category_id') is-invalid @enderror"
+                            <input class="form-check-input"
                                 type="radio"
-                                name="category_id"
-                                value="{{ $category->id }}"
-                                id="category{{ $category->id }}"
-                                {{ old('category_id') == $category->id ? 'checked' : '' }}>
-                            <label class="form-check-label" for="category{{ $category->id }}">
-                                {{ $category->name }}
+                                name="Admin_UI"
+                                value="Admin_UI"
+                            >
+                            <p>Admin_UI</p>
+                            <label class="form-check-label" for="">
+                            
                             </label>
                         </div>
-                    @endforeach
-                    @error('category_id')
-                        <div class="invalid-feedback d-block">{{ $message }}</div>
-                        @enderror
                 </div>
             </div>
         </div>

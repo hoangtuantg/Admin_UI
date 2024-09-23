@@ -28,7 +28,7 @@ class ProductController extends Controller
 
     }
 
-    public function edit($id)
+    public function edit() //$id
     {
         return view('admin.pages.products.update');
     }

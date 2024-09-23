@@ -16,7 +16,7 @@
             <li>
                 <div class="mt-2 me-4">
                     <i class="ph-arrow-bend-down-left link-yellow"></i>
-                    <a href="{{ route('todo.home') }}" class="link-yellow">Trang chủ</a>
+                    <a href="" class="link-yellow">Trang chủ</a>
                 </div>
             </li>
             <li class="nav-item nav-item-dropdown-lg dropdown ms-lg-2">
@@ -25,15 +25,15 @@
                         <img src="{{ asset('assets/admin/images/avatar.jpg') }}" class="w-32px h-32px rounded-pill" alt="">
                         <span class="status-indicator bg-success"></span>
                     </div>
-                    <span class="d-none d-lg-inline-block mx-lg-2 text-info">{{ auth()->user()->fullname }}</span>
+                    <span class="d-none d-lg-inline-block mx-lg-2 text-info"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a href="{{ route('admin.users.profile',['id' => auth()->id()]) }}" class="dropdown-item">
+                    <a href="{{ route('admin.users.profile') }}" class="dropdown-item">
                         <i class="ph-gear me-2"></i>
                         Tài khoản
                     </a>
                     <div class="dropdown-divider"></div>
-                    <form action="{{ route('logout') }}" method="get">
+                    <form action="" method="get">
                         @csrf
                         <button type="submit" class="dropdown-item">
                             <i class="ph-sign-out me-2"></i>

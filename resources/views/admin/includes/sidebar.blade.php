@@ -54,7 +54,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.categories.index') }}" class="nav-link {{ request()->routeIs('admin.categories.index') ?'active' : '' }}">
+                    <a href="" class="nav-link {{ request()->routeIs('admin.categories.index') ?'active' : '' }}">
                         <i class="ph-stack"></i>
                         <span>
                             Danh mục
@@ -77,7 +77,7 @@
                     <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Đơn hàng</div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.orders.pending.index') }}" class="nav-link {{ request()->routeIs('admin.orders.pending.index') ?'active' : '' }}">
+                    <a href="" class="nav-link {{ request()->routeIs('admin.orders.pending.index') ?'active' : '' }}">
                         <i class="ph-shopping-bag"></i>
                         <span>
                             Đơn hàng chờ duyệt
@@ -85,7 +85,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.orders.index') }}" class="nav-link {{ request()->routeIs('admin.orders.index') ?'active' : '' }}">
+                    <a href="" class="nav-link {{ request()->routeIs('admin.orders.index') ?'active' : '' }}">
                         <i class="ph-shopping-cart"></i>
                         <span>
                             Tất cả đơn hàng
@@ -97,23 +97,21 @@
                     <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Hệ thống</div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.index') ?'active' : '' }}">
+                    <a href="" class="nav-link {{ request()->routeIs('admin.users.index') ?'active' : '' }}">
                         <i class="ph-user-gear"></i>
                         <span>
                             Tài khoản
                         </span>
                     </a>
                 </li>
-                @if(auth()->user()->role == \App\Enums\Role::SuperAdmin)
                 <li class="nav-item">
-                    <a href="{{ route('admin.system-email.index') }}" class="nav-link {{ request()->routeIs('admin.system-email.index') ?'active' : '' }}">
+                    <a href="" class="nav-link {{ request()->routeIs('admin.system-email.index') ?'active' : '' }}">
                         <i class="ph-twitch-logo"></i>
                         <span>
                             Email hệ thống
                         </span>
                     </a>
                 </li>
-                @endif
             </ul>
         </div>
         <!-- /main navigation -->

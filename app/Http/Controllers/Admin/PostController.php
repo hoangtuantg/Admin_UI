@@ -31,7 +31,7 @@ class PostController extends Controller
 
     }
 
-    public function edit()
+    public function edit() //$id
     {
         return view('admin.pages.posts.update');
     }

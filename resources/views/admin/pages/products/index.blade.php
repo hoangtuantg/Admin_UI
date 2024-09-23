@@ -26,41 +26,6 @@
 @section('page-content')
 <div class="content">
     <!-- Content -->
-    @if (session('success'))
-    <script>
-        new Noty({
-            type: 'success',
-            layout: 'topRight',
-            text: "{{ session('success') }}",
-            timeout: 2000,
-            progressBar: true,
-            callbacks: {
-                onTemplate: function() {
-                    this.barDom.innerHTML = '<div class="noty_body" style="background: #188251; color: #ffffff;">' + this.options.text + '</div>';
-                    this.barDom.style.backgroundColor = 'transparent';
-                }
-            }
-        }).show();
-        sessionStorage.removeItem('selectedFile');
-        sessionStorage.removeItem('selectedGalleries');
-    </script>
-    @elseif(session('error'))
-    <script>
-        new Noty({
-            type: 'error',
-            layout: 'topRight',
-            text: "{{ session('error') }}",
-            timeout: 2000,
-            progressBar: true,
-            callbacks: {
-                onTemplate: function() {
-                    this.barDom.innerHTML = '<div class="noty_body" style="background: #d33; color: #ffffff;">' + this.options.text + '</div>';
-                    this.barDom.style.backgroundColor = 'transparent';
-                }
-            }
-        }).show();
-    </script>
-    @endif
     <div class="row">
         <div class="col">
             <div class="card">
@@ -109,36 +74,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($products as $product)
+                                
                                 <tr>
-                                    <td>{{ $loop->index + 1 + $products->perPage() * ($products->currentPage() - 1) }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <td>{{ $product->description }}</td>
-                                    <td>{{ number_format($product->price, 0, ',', '.') }} ₫</td>
-                                    <td><img src="{{ asset($product->thumbnail) }}" alt="{{ $product->name }}" width="50"></td>
+                                    <td>Admin_UI</td>
+                                    <td>Admin_UI</td>
+                                    <td>Admin_UI</td>
+                                    <td>Admin_UI</td>
+                                    <td><img src="" alt="Admin_UI" width="50"></td>
                                     <td>
-                                        @if($product->quantity != 0)
-                                        <span class="badge bg-success bg-opacity-20 text-success">Còn hàng</span>
-                                        @else
-                                        <span class="badge bg-danger">Hết hàng</span>
-                                        @endif
+                                    Admin_UI
                                     </td>
-                                    <td>{{ $product->quantity }}</td>
-                                    <td>{{ $product->category ? $product->category->name : 'Không có danh mục' }}</td>
+                                    <td>Admin_UI</td>
+                                    <td>Admin_UI</td>
                                     <td class="text-center">
                                         <div class="dropdown">
                                             <a href="#" class="text-body" data-bs-toggle="dropdown">
                                                 <i class="ph-list"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
-                                                <a href="{{ route('admin.products.show', ['id' => $product->id]) }}" class="dropdown-item">
+                                                <a href="" class="dropdown-item">
                                                     <i class="ph-eye me-2"></i>
                                                     Xem chi tiết
                                                 </a>
-                                                <form action="{{ route('admin.products.delete', ['id' => $product->id]) }}" method="POST">
+                                                <form action="" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="dropdown-item">
+                                                    <a href="{{ route('admin.products.edit') }}" class="dropdown-item">
                                                         <i class="ph-pencil me-2"></i>
                                                         Chỉnh sửa
                                                     </a>
@@ -151,13 +112,13 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endforeach
+                                
                             </tbody>
                         </table>
 
                         <div class="d-flex justify-content-end mt-2">
                             <div class="pagination">
-                                {{ $products->links() }}
+                                
                             </div>
                         </div>
                     </div>
@@ -182,41 +143,7 @@
 @endsection
 
 @section('script_custom')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const deleteButtons = document.querySelectorAll('.dropdown-item.text-danger');
-        const confirmDialog = document.getElementById('confirmDialog');
-        const confirmYesButton = document.getElementById('confirmYes');
-        const confirmNoButton = document.getElementById('confirmNo');
-        let formToSubmit = null;
 
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                formToSubmit = this.closest('form');
-                confirmDialog.classList.add('show');
-            });
-        });
-
-        confirmYesButton.addEventListener('click', function() {
-            if (formToSubmit) {
-                formToSubmit.submit();
-            }
-            confirmDialog.classList.remove('show');
-        });
-
-        confirmNoButton.addEventListener('click', function() {
-            confirmDialog.classList.remove('show');
-        });
-
-        // Optional: Close dialog when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === confirmDialog) {
-                confirmDialog.classList.remove('show');
-            }
-        });
-    });
-</script>
 @endsection
 
 @section('style_custom')
